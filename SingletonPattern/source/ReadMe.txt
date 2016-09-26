@@ -1,6 +1,15 @@
-﻿static ChocolateBoiler* getInstance()
-	{	
-		static ChocolateBoiler *singletonBoiler;
+﻿class Singelton{
+static ChocolateBoiler* getInstance();
+
+private:
+static ChocolateBoiler *singletonBoiler;
+
+}
+Singelton* Singelton::*singletonBoiler=NULL;
+
+
+static ChocolateBoiler* getInstance()
+	{
 		if (NULL == singletonBoiler)
 		{
 			singletonBoiler = new ChocolateBoiler();
@@ -8,7 +17,8 @@
 		return singletonBoiler;
 	}
 
-定义为类的私有静态成员变量 编译不过 显示连接错误 未知原因
+错误：定义为类的私有静态成员变量 编译不过 显示连接错误 
+解决：c++中静态成员变量要在类外部再定义,否则产生link2001错误.
 
 
 注意：
@@ -22,9 +32,6 @@
  
 静态成员函数可以直接访问该类的静态数据和函数成员，而访问非静态数据成员必须通过参数传递的方式得到一个对象名，然后通过对象名来访问。
 
-
-
-以下三种方式只有第二种验证通过
 
 
 

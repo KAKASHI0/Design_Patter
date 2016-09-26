@@ -2,6 +2,7 @@
 
 using namespace std;
 
+ChocolateBoiler* ChocolateBoiler::singletonBoiler=NULL;
 
 ChocolateBoiler::ChocolateBoiler(void): m_empty(true),m_boiled(false)
 {

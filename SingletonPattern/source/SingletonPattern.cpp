@@ -4,7 +4,7 @@
 #include "stdafx.h"
 #include <stdlib.h>
 #include "ChocolateBoiler.h"
-
+#include "test.h"
 int _tmain(int argc, _TCHAR* argv[])
 {
 	ChocolateBoiler* boiler = ChocolateBoiler::getInstance();
@@ -13,6 +13,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	ChocolateBoiler* nextBoiler = ChocolateBoiler::getInstance();
 	nextBoiler->boil();
 	boiler->drain();
+	MyClass *test = MyClass::getInstance();
 	system("PAUSE");
 	return 0;
 }

@@ -4,12 +4,12 @@ class ChocolateBoiler
 {
 private:
 	ChocolateBoiler(void);
-	//static ChocolateBoiler *singletonBoiler; //定义在外面提示链接错误
+	static ChocolateBoiler *singletonBoiler; //声明
 public:	
 	~ChocolateBoiler(void);
 	static ChocolateBoiler* getInstance()
 	{	
-		static ChocolateBoiler *singletonBoiler;
+		//static ChocolateBoiler *singletonBoiler;
 		if (NULL == singletonBoiler)
 		{
 			singletonBoiler = new ChocolateBoiler();
@@ -27,7 +27,7 @@ private:
 	bool m_empty;
 	bool m_boiled;	
 };
-//const SingletonStatic* SingletonStatic::m_instance = new SingletonStatic;
+
 
 
 
